@@ -1,28 +1,20 @@
 class ComerrsController < ApplicationController
   before_action :set_comerr, only: [:show, :edit, :update, :destroy]
 
-  # GET /comerrs
-  # GET /comerrs.json
   def index
     @comerrs = Comerr.all
   end
 
-  # GET /comerrs/1
-  # GET /comerrs/1.json
   def show
   end
 
-  # GET /comerrs/new
   def new
     @comerr = Comerr.new
   end
 
-  # GET /comerrs/1/edit
   def edit
   end
 
-  # POST /comerrs
-  # POST /comerrs.json
   def create
     @comerr = Comerr.new(comerr_params)
 
@@ -37,8 +29,6 @@ class ComerrsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /comerrs/1
-  # PATCH/PUT /comerrs/1.json
   def update
     respond_to do |format|
       if @comerr.update(comerr_params)
@@ -51,8 +41,6 @@ class ComerrsController < ApplicationController
     end
   end
 
-  # DELETE /comerrs/1
-  # DELETE /comerrs/1.json
   def destroy
     @comerr.destroy
     respond_to do |format|
@@ -62,12 +50,10 @@ class ComerrsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_comerr
       @comerr = Comerr.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def comerr_params
       params.require(:comerr).permit(:message, :description, :resolution)
     end
