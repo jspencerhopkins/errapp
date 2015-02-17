@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Comerrs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th>Description</th>
+      <th>Resolution</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comerrs.each do |comerr| %>
+      <tr>
+        <td><%= comerr.message %></td>
+        <td><%= comerr.description %></td>
+        <td><%= comerr.resolution %></td>
+        <td><%= link_to 'Show', comerr %></td>
+        <td><%= link_to 'Edit', edit_comerr_path(comerr) %></td>
+        <td><%= link_to 'Destroy', comerr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Comerr', new_comerr_path %>

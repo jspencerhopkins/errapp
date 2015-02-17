@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @comerr.message %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @comerr.description %>
+</p>
+
+<p>
+  <strong>Resolution:</strong>
+  <%= @comerr.resolution %>
+</p>
+
+<%= link_to 'Edit', edit_comerr_path(@comerr) %> |
+<%= link_to 'Back', comerrs_path %>
