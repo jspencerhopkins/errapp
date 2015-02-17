@@ -15,5 +15,12 @@
   <%= @comerr.resolution %>
 </p>
 
+<p>
+  <strong>Screen Shot:</strong><br>
+  <%= image_tag @comerr.image.url(:medium) %>
+</p>
+
+
+
 <%= link_to 'Edit', edit_comerr_path(@comerr) %> |
 <%= link_to 'Home', root_path %>

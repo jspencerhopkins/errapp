@@ -23,7 +23,14 @@
     <%= f.label :resolution %><br>
     <%= f.text_field :resolution %>
   </div>
+  <div class="field">
+    <%= f.label "Upload Screen Shot" %><br>
+    <%= f.file_field :image %>
+  </div>
+
+  <br>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Error"%>
   </div>
 <% end %>

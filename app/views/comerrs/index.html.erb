@@ -8,6 +8,7 @@
       <th>Message</th>
       <th>Description</th>
       <th>Resolution</th>
+      <th>Screen Shot</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= comerr.message %></td>
         <td><%= comerr.description %></td>
         <td><%= comerr.resolution %></td>
+        <td><%= image_tag comerr.image.url(:thumb)%></td>
         <td><%= link_to 'Show', comerr %></td>
         <td><%= link_to 'Edit', edit_comerr_path(comerr) %></td>
         <td><%= link_to 'Delete', comerr, method: :delete, data: { confirm: 'Are you sure?' } %></td>

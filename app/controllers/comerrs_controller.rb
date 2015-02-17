@@ -39,6 +39,6 @@ class ComerrsController < ApplicationController
     end
 
     def comerr_params
-      params.require(:comerr).permit(:message, :description, :resolution)
+      params.require(:comerr).permit(:message, :description, :resolution, :image)
     end
 end
