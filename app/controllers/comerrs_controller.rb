@@ -6,6 +6,7 @@ class ComerrsController < ApplicationController
   end
 
   def show
+    @users = User.all
   end
 
   def new
@@ -16,42 +17,25 @@ class ComerrsController < ApplicationController
   end
 
   def create
-    @comerr = Comerr.new(comerr_params)
-
-    respond_to do |format|
-      if @comerr.save
-        format.html { redirect_to @comerr, notice: 'Comerr was successfully created.' }
-        format.json { render :show, status: :created, location: @comerr }
-      else
-        format.html { render :new }
-        format.json { render json: @comerr.errors, status: :unprocessable_entity }
-      end
-    end
+    @user = User.find(session[:user_id])
+    @comerr = @user.comerrs.create(comerr_params)
+    redirect_to root_url
   end
 
   def update
-    respond_to do |format|
-      if @comerr.update(comerr_params)
-        format.html { redirect_to @comerr, notice: 'Comerr was successfully updated.' }
-        format.json { render :show, status: :ok, location: @comerr }
-      else
-        format.html { render :edit }
-        format.json { render json: @comerr.errors, status: :unprocessable_entity }
-      end
-    end
+    @comerr.update(comerr_params)
+    redirect_to @comerr
   end
 
   def destroy
     @comerr.destroy
-    respond_to do |format|
-      format.html { redirect_to comerrs_url, notice: 'Comerr was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to root_url
   end
 
   private
     def set_comerr
-      @comerr = Comerr.find(params[:id])
+      @user = User.find(session[:user_id])
+      @comerr = @user.comerrs.find(params[:id])
     end
 
     def comerr_params
