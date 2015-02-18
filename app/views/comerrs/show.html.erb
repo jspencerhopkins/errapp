@@ -1,20 +1,25 @@
-<p id="notice"><%= notice %></p>
+<h1>Error Message - More Details</h1>
+
+<p>
+	<strong>Created by @ Date/Time:</strong><br><br>
+	<%= @comerr.user.name %> at <%= time_ago_in_words @comerr.created_at %> ago
+</p>
 
 <p>
   <strong>Error Message:</strong><br><br>
   <%= @comerr.message %>
 </p>
-<br>
+
 <p>
   <strong>Description of Error:</strong><br><br>
   <%= @comerr.description %>
 </p>
-<br>
+
 <p>
   <strong>Error Resolution:</strong><br><br>
   <%= @comerr.resolution %>
 </p>
-<br>
+
 <p>
   <strong>Screen Shot:</strong><br><br>
   <%= image_tag @comerr.image.url(:medium) %>
