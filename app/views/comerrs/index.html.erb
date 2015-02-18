@@ -9,20 +9,21 @@
       <th>Description</th>
       <th>Resolution</th>
       <th>Screen Shot</th>
-      <th colspan="3"></th>
+      <th>Actions</th>
     </tr>
   </thead>
 
   <tbody>
     <% @comerrs.each do |comerr| %>
-      <tr class="separating_line">
-        <td><%= comerr.message %></td>
+      <tr>
+        <td id="message"><%= comerr.message %></td>
         <td><%= comerr.description %></td>
         <td><%= comerr.resolution %></td>
         <td><%= image_tag comerr.image.url(:thumb)%></td>
-        <td><%= link_to 'Show', comerr %></td>
-        <td><%= link_to 'Edit', edit_comerr_path(comerr) %></td>
-        <td><%= link_to 'Delete', comerr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><p><%= link_to 'Show', comerr %></p>
+            <p><%= link_to 'Edit', edit_comerr_path(comerr) %></p>
+            <p><%= link_to 'Delete', comerr, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </td>
       </tr>
     <% end %>
   </tbody>
