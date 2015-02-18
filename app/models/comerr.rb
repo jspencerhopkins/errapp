@@ -1,6 +1,8 @@
 class Comerr < ActiveRecord::Base
 	belongs_to :user
 
+	validates :message, :description, :resolution, presence: true
+
 	has_attached_file :image, :styles => { :medium => "800x10000>", 
 																					:thumb => "300x500>" }, 
 																					:default_url => "/images/:style/missing.png"
