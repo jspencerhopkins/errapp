@@ -1,26 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Message:</strong>
+  <strong>Error Message:</strong><br><br>
   <%= @comerr.message %>
 </p>
-
+<br>
 <p>
-  <strong>Description:</strong>
+  <strong>Description of Error:</strong><br><br>
   <%= @comerr.description %>
 </p>
-
+<br>
 <p>
-  <strong>Resolution:</strong>
+  <strong>Error Resolution:</strong><br><br>
   <%= @comerr.resolution %>
 </p>
-
+<br>
 <p>
-  <strong>Screen Shot:</strong><br>
+  <strong>Screen Shot:</strong><br><br>
   <%= image_tag @comerr.image.url(:medium) %>
 </p>
 
 
+<%= link_to 'Home', root_path %> &nbsp |  &nbsp
+<%= link_to 'Edit', edit_comerr_path(@comerr) %> 
 
-<%= link_to 'Edit', edit_comerr_path(@comerr) %> |
-<%= link_to 'Home', root_path %>
