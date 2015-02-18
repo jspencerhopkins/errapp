@@ -2,7 +2,9 @@
 
 <h1>Common Error Messages</h1>
 
-<%= link_to 'Add New Error', new_comerr_path %>
+<%= link_to 'Add New Error', new_comerr_path, id: "new_error_link" %>
+<br><br>
+<%= render 'form' %>
 
 <table>
   <thead>
@@ -30,3 +32,13 @@
     <% end %>
   </tbody>
 </table>
+
+<script>
+
+  $("#new_comerr").hide();
+  $("#new_error_link").click(function(event){
+    event.preventDefault();
+    $("#new_comerr").slideDown();
+  });
+
+</script>

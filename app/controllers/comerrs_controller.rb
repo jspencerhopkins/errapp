@@ -3,6 +3,7 @@ class ComerrsController < ApplicationController
 
   def index
     @comerrs = Comerr.all
+    @comerr = Comerr.new
   end
 
   def show
