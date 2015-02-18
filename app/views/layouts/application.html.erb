@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Errapp</title>
+  <title>Common Error Messages</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+	<% if session[:user_id] %>
+		<%= form_tag '/logout', method: :delete do %>
+			<%= submit_tag "Logout" %>
+		<% end %>
+	<% else %>
+		<p><%= link_to 'Signup', signup_path %> or <%= link_to 'Log in', login_path %></p>
+	<% end %>
+
 
 <%= yield %>
 
